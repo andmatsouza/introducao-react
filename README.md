@@ -18,3 +18,6 @@ Rodar o projeto React
 
 Transforma o CSS em componentes
 ### npm install --save styled-components
+
+Instalar a dependência Bootstrap
+### npm install react-bootstrap bootstrap
