@@ -15,3 +15,6 @@ Acessar o diretório do projeto
 
 Rodar o projeto React
 ### npm start
+
+Transforma o CSS em componentes
+### npm install --save styled-components

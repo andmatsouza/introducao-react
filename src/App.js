@@ -5,7 +5,8 @@ import Article from './components/Article';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
 import Comment from './components/Comment';
-import './app.css';
+//import './app.css';
+import { Container, HeaderSty, MenuSty, ConteudoSty} from './styles';
 
 function App() {
 
@@ -59,8 +60,20 @@ const valorInput = e => setDados({...dados, [e.target.name]: e.target.value});
   }
 
   return(
-    <div>
+    <Container>
+      <HeaderSty>
+        <p>Logo</p>
+      </HeaderSty>
+      <MenuSty>
+        Menu
+      </MenuSty>
+      <ConteudoSty>
+        <span>Listar Usuários</span>
+      </ConteudoSty>
+
+      <hr />
       <Header />
+      
       <Menu />
       <Article />
       <Comment 
@@ -94,7 +107,7 @@ const valorInput = e => setDados({...dados, [e.target.name]: e.target.value});
         <button type='submit'>Cadastrar</button>
       </form>
       <hr />
-    </div>
+    </Container>
   );
 }
 
