@@ -24,6 +24,18 @@ function App() {
     nome: '',
     preco: ''
   })
+  const [dados, setDados] = useState({
+    nome_usuario: '',
+    email_usuario: ''
+});
+
+const cadUsuario = e => {
+  e.preventDefault();
+  console.log("Nome: " + dados.nome_usuario);
+  console.log("E-mail: " + dados.email_usuario);
+}
+
+const valorInput = e => setDados({...dados, [e.target.name]: e.target.value});
 
   function buscarProduto() {
     console.log("Procurar produto");
@@ -62,6 +74,19 @@ function App() {
       <p>Listar Cursos</p>
       <p>{data.nome}</p>
       <p>{data.preco}</p>
+
+      <hr />
+      <h1>Cadastrar</h1>
+      <form onSubmit={cadUsuario}>
+        <label>Nome:</label>
+        <input type="text" name="nome_usuario" placeholder="Nome do cliente" onChange={valorInput}/><br /><br />
+
+        <label>E-mail:</label>
+        <input type="email" name="email_usuario" placeholder="Melhor e-mail do cliente" onChange={valorInput}/><br /><br />
+
+        <button type='submit'>Cadastrar</button>
+      </form>
+      <hr />
     </div>
   );
 }
