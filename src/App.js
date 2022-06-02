@@ -5,6 +5,7 @@ import Article from './components/Article';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
 import Comment from './components/Comment';
+import './app.css';
 
 function App() {
 
@@ -51,6 +52,12 @@ const valorInput = e => setDados({...dados, [e.target.name]: e.target.value});
     buscarProduto();
   },[produtoId]);
 
+  const nomePerso = {
+    color: "green",
+    fontFamily: "Arial",
+    fontSize: "18px"
+  }
+
   return(
     <div>
       <Header />
@@ -71,12 +78,12 @@ const valorInput = e => setDados({...dados, [e.target.name]: e.target.value});
       <p>Listar Produto</p>
       <p>{produtoNome}</p>
 
-      <p>Listar Cursos</p>
-      <p>{data.nome}</p>
+      <p style={nomePerso}>Listar Cursos</p>
+      <p className='curso'>{data.nome}</p>
       <p>{data.preco}</p>
 
       <hr />
-      <h1>Cadastrar</h1>
+      <h1 style={{color: "#0000ff", fontSize: 15}}>Cadastrar</h1>
       <form onSubmit={cadUsuario}>
         <label>Nome:</label>
         <input type="text" name="nome_usuario" placeholder="Nome do cliente" onChange={valorInput}/><br /><br />
